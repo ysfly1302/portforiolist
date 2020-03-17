@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100%;
+}
+
+
+.clear::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#topimg{
+  width: 80%;
+  margin: auto 10% 10% 10%;
+  height: 560px;
+}
+
+
+
+header ul{
+  width: 100%;
+  text-align: right;
+  margin: 30px auto;
+}
+header li{
+  display: inline-block;
+  list-style-type: none;
+  margin: auto 30px;
+  font-size: 1.3rem;
+}
+#mainabout{
+  display: flex;
+  justify-content: center;
+}
+.main_h1{
+  text-align: center;
+  margin: 20px auto;
+}
+.about{
+  float: left;
+  background: pink;
+  width: 24%;
+  margin: auto;
+}
