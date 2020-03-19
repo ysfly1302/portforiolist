@@ -5,32 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
     <title>Portforio List</title>
   </head>
   <body>
     <header>
       <nav>
         <ul>
-          <li>TOP</li>
-          <li>ABOUT</li>
-          <li>LIST</li>
+          <li><a href="#">TOP</a></li>
+          <li><a href="#h1_about" id="menu_about">ABOUT</a></li>
+          <li><a href="#h1_list" id="menu_list">LIST</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <img src="ptimg/ptop.png" alt="トップ画像" id="topimg">
       <section class="clear">
-      <h1 class="main_h1">ABOUT</h1>
+      <h1 class="main_h1" id="h1_about">ABOUT</h1>
       <section id="mainabout">
        <section class="about">
-          <h1>プロフィール</h1>
+          <h1 class="wf-mplus1p">プロフィール</h1>
             <ul class="anoutchild">
               <li>women</li>
               <li>20代</li>
             </ul>
         </section>
         <section class="about">
-          <h1>スキル</h1>
+          <h1 class="wf-mplus1p">スキル</h1>
             <ul class="aboutchild">
               <li>HTML</li>
               <li>CSS</li>
@@ -40,7 +41,7 @@
             </ul>
        </section>
        <section class="about">
-         <h1>得意なこと</h1>
+         <h1 class="wf-mplus1p">得意なこと</h1>
             <ul class="aboutchild">
               <li>illustratorでのデザイン</li>
               <li>アパレル関係のサイト</li>
@@ -50,9 +51,11 @@
      </section>
     </section>
     <section>
-      <h1 class="main_h1">LIST</h1>
+      <h1 class="main_h1" id="h1_list">LIST</h1>
+      <section class="list clear">
         <section class="listbox">
           <h1>No.1</h1>
+          <a href="https://ysfly1302.github.io/shellysite/"><img src="ptimg/ptlist1.png" alt="ShellySite" class="phoneimg"></a>
             <ul class="listtext">
               <li>Shelly Site</li>
               <li>ファッション通販サイト</li>
@@ -63,12 +66,17 @@
                   <li>slick</li>
                 </ul>
               </li>
-              <li class="jump">サイトを見る</li>
+              <li>
+                <a href="https://ysfly1302.github.io/shellysite/" class="jump wf-mplus1p">サイトを見る</a>
+              </li>
             </ul>
-          <a href="#"><img src="ptimg/ptlist1.png" alt="ShellySite"></a>
+          </section>
+          <a href="https://ysfly1302.github.io/shellysite/"><img src="ptimg/ptlist1.png" alt="ShellySite" class="pcimg"></a>
         </section>
-        <section class="listbox">
+        <section class="list clear">
+         <section class="listbox">
           <h1>No.2</h1>
+          <a href="https://ysfly1302.github.io/weddingsite/"><img src="ptimg/ptlist2.png" alt="WeddingSite" class="phoneimg"></a>
             <ul class="listtext">
               <li>AOYAMA PRINSESS HOTEL Wedding Site</li>
               <li>ウェディング会場案内サイト</li>
@@ -79,23 +87,42 @@
                 <li>swiper</li>
                 <li>slick</li>
                 <li>aos</li>
+                <li><a href="https://ysfly1302.github.io/weddingsite/" class="jump wf-mplus1p">サイトを見る</a></li>
                </ul>
-              </li>
-              <li class="jump">サイトを見る</li>
             </ul>
-          <a href="#"><img src="ptimg/ptlist2.png" alt="WeddingSite"></a>
+          </section>
+          <a href="https://ysfly1302.github.io/weddingsite/"><img src="ptimg/ptlist2.png" alt="WeddingSite" class="pcimg"></a>
         </section>
-      </section>
-      <section class="listbox">
+      <section class="list clear">
+        <section class="listbox">
         <h1>No.3</h1>
+        <a href="https://ysfly1302.github.io/dice/"><img src="ptimg/ptlist3.png" alt="サイコロ" class="phoneimg"></a>
         <ul class="listtext">
           <li>サイコロ</li>
           <li>JavaScript勉強用サンプル</li>
           <li>約8h</li>
-          <li class="jump">ページを見る</li>
+          <li><a href="https://ysfly1302.github.io/dice/" class="jump wf-mplus1p">ページを見る</a></li>
         </ul>
-        <a href="#"><img src="ptimg/ptlist3.png" alt="サイコロ"></a>
+      </section>
+        <a href="https://ysfly1302.github.io/dice/"><img src="ptimg/ptlist3.png" alt="サイコロ" class="pcimg"></a>
+      </section>
       </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script type="text/javascript" src="js/slick.min.js"></script>
+      <script type="text/javascript">
+      $(function(){
+        // #で始まるリンクをクリックしたら実行されます
+        $('a[href^="#"]').click(function() {
+          // スクロールの速度
+          var speed = 800; // ミリ秒で記述
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+        });
+      });
+    </script>
   </body>
 </html>
